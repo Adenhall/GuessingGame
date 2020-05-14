@@ -17,8 +17,8 @@ let playGameNow = document.getElementById('playGame')
 function playGame() {
   let x=Math.floor(Math.random()*10)
 
-  if (answer.value <= 0) {
-    document.getElementById('gameStatus2').innerHTML = "Don't be silly. Enter from 1 to 100 please"
+  if (answer.value <= 0 || isNaN(answer.value)) {
+    document.getElementById('gameStatus2').innerHTML = "Don't be silly. Enter a NUMBER from 1 to 100 please"
     document.getElementById('gameStatus').innerHTML = null
     i=i-1
   }
@@ -36,6 +36,13 @@ function playGame() {
   }
   i++
   document.getElementById('counts').innerHTML=`You've tried ${i} time(s)`
+}
+
+function resetBtn() {
+  document.getElementById('gameStatus2').innerHTML = null
+  document.getElementById('gameStatus').innerHTML = null
+  let rand = Math.floor(Math.random() * 100) + 1;
+  document.getElementById('counts').innerHTML="Again!"
 }
   console.log(i)
   let history = []
