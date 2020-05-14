@@ -8,3 +8,15 @@ section {
   justify-content: center;
   align-items: center;
 }
+a {
+  text-decoration: none;
+}
+i {
+  color: red;
+}
+.card-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
