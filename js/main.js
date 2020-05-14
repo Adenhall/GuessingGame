@@ -1,7 +1,7 @@
-let profile = document.getElementById("gameProfile").value
+let profile = document.getElementById("gameProfile")
 
 function loginCred() {
-  document.getElementById("login").innerHTML = `Welcome aboard, master ${profile}`;
+  document.getElementById("login").innerHTML = `Welcome aboard, master ${profile.value}`;
   console.log(profile)
 }
 
