@@ -11,7 +11,7 @@ let a = ['Try again HARDER','Too bad! Muahahahaha','I could have guessed it bett
 let x=0
 let i=0
 let playGameNow = document.getElementById('playGame')
-
+let history = []
 
 
 function playGame() {
@@ -36,6 +36,8 @@ function playGame() {
   }
   i++
   document.getElementById('counts').innerHTML=`You've tried ${i} time(s)`
+  history.push(answer.value)
+  document.getElementById('gameHistory').innerHTML=`History: ${history}`
 }
 
 function resetBtn() {
@@ -44,8 +46,5 @@ function resetBtn() {
   let rand = Math.floor(Math.random() * 100) + 1;
   document.getElementById('counts').innerHTML="Again!"
 }
-  console.log(i)
-  let history = []
-  history.push(answer)
+
   playGameNow.addEventListener('click',playGame)
-  document.getElementById('gameHistory').innerHTML=`History: ${history}`
