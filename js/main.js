@@ -34,17 +34,24 @@ function playGame() {
     document.getElementById('gameStatus').innerHTML = `Wow`
     document.getElementById('gameStatus2').innerHTML = `Correct`
   }
-  i++
-  document.getElementById('counts').innerHTML=`You've tried ${i} time(s)`
-  history.push(answer.value)
-  document.getElementById('gameHistory').innerHTML=`History: ${history}`
+  if (i<5) {
+    i++
+    document.getElementById('counts').innerHTML=`You've tried ${i} time(s)`
+    history.push(answer.value)
+    document.getElementById('gameHistory').innerHTML=`History: ${history}`
+  }
+  else {
+    document.getElementById('gameStatus2').innerHTML = null
+    document.getElementById('gameStatus').innerHTML = null
+    document.getElementById('counts').innerHTML="Out of tries! Geet Good :)"
+  }
 }
-
 function resetBtn() {
   document.getElementById('gameStatus2').innerHTML = null
   document.getElementById('gameStatus').innerHTML = null
   let rand = Math.floor(Math.random() * 100) + 1;
   document.getElementById('counts').innerHTML="Again!"
+  i=0
 }
 
   playGameNow.addEventListener('click',playGame)
