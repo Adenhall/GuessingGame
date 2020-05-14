@@ -43,13 +43,13 @@ function playGame() {
   else {
     document.getElementById('gameStatus2').innerHTML = null
     document.getElementById('gameStatus').innerHTML = null
-    document.getElementById('counts').innerHTML="Out of tries! Geet Good :)"
+    document.getElementById('counts').innerHTML=`Out of tries! Geet Good :) ${rand}`
   }
 }
 function resetBtn() {
   document.getElementById('gameStatus2').innerHTML = null
   document.getElementById('gameStatus').innerHTML = null
-  let rand = Math.floor(Math.random() * 100) + 1;
+  rand = Math.floor(Math.random() * 100) + 1;
   document.getElementById('counts').innerHTML="Again!"
   history = []
   document.getElementById('gameHistory').innerHTML=`History: ${history}`
