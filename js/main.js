@@ -13,10 +13,10 @@ let i=0
 let playGameNow = document.getElementById('playGame')
 let history = []
 
+playGameNow.addEventListener('click',playGame)
 
 function playGame() {
   let x=Math.floor(Math.random()*10)
-
   if (answer.value <= 0 || isNaN(answer.value)) {
     document.getElementById('gameStatus2').innerHTML = "Don't be silly. Enter a NUMBER from 1 to 100 please"
     document.getElementById('gameStatus').innerHTML = null
@@ -51,7 +51,7 @@ function resetBtn() {
   document.getElementById('gameStatus').innerHTML = null
   let rand = Math.floor(Math.random() * 100) + 1;
   document.getElementById('counts').innerHTML="Again!"
+  history = []
+  document.getElementById('gameHistory').innerHTML=`History: ${history}`
   i=0
 }
-
-  playGameNow.addEventListener('click',playGame)
